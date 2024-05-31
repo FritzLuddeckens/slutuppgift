@@ -5,6 +5,7 @@ import Intro from "../../components/intro.astro";
 import Layout from "../../components/layout";
 import MoreStories from "../../components/more-stories";
 import { metaTagsFragment, responsiveImageFragment } from "../../lib/fragments";
+import AstroLayout from "../../layouts/Layout.astro"
 
 const graphqlRequest = {
   query: `
@@ -68,7 +69,7 @@ const morePosts = posts
 
 ---
 
-<>
+<AstroLayout title="Sidtitel">
   <Layout preview={true} currentSlug={"/"}>
     <Container>
       <Intro />
@@ -77,4 +78,4 @@ const morePosts = posts
       <MoreStories client:visible preview={true} posts={morePosts} />
     </Container>
   </Layout>
-</>
+</AstroLayout>
